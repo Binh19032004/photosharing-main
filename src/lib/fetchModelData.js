@@ -6,7 +6,7 @@
  */
 async function fetchModel(url) {
   try {
-    const response = await fetch(`http://localhost:8081/api${url}`);
+    const response = await fetch(`https://7drz6q-8081.csb.app/api${url}`);
     if (!response.ok) {
       throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
     }

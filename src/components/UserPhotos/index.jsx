@@ -14,7 +14,9 @@ function UserPhotos() {
   useEffect(() => {
     const fetchPhotos = async () => {
       try {
-        const response = await fetch(`http://localhost:8081/api/photo/photosOfUser/${userId}`);
+        const response = await fetch(
+          `https://7drz6q-8081.csb.app/api/photo/photosOfUser/${userId}`
+        );
         if (response.ok) {
           const data = await response.json();
           setPhotos(data);

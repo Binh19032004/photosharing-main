@@ -12,16 +12,18 @@ function TopBar() {
     if (userId) {
       const fetchUser = async () => {
         try {
-          const response = await fetch(`http://localhost:8081/api/user/${userId}`);
+          const response = await fetch(
+            `https://7drz6q-8081.csb.app/api/user/${userId}`
+          );
           if (response.ok) {
             const data = await response.json();
             setUserName(`${data.last_name}`);
           } else {
-            console.error('Error fetching user:', await response.text());
+            console.error("Error fetching user:", await response.text());
             setUserName("Người dùng");
           }
         } catch (error) {
-          console.error('Error fetching user:', error);
+          console.error("Error fetching user:", error);
           setUserName("Người dùng");
         }
       };
@@ -33,7 +35,10 @@ function TopBar() {
 
   let contextText = "PhotoShare";
 
-  if (location.pathname.startsWith("/users/") && !location.pathname.includes("/photos")) {
+  if (
+    location.pathname.startsWith("/users/") &&
+    !location.pathname.includes("/photos")
+  ) {
     contextText = `Thông tin người dùng ${userName || userId}`;
   } else if (location.pathname.includes("/photos")) {
     contextText = `Ảnh của người dùng ${userName || userId}`;

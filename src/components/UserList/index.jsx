@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { List, ListItem, ListItemText, Divider } from '@mui/material';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { List, ListItem, ListItemText, Divider } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -9,15 +9,17 @@ const UserList = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:8081/api/user/list');
+        const response = await fetch(
+          "https://7drz6q-8081.csb.app/api/user/list"
+        );
         if (response.ok) {
           const data = await response.json();
           setUsers(data);
         } else {
-          console.error('Error fetching users:', await response.text());
+          console.error("Error fetching users:", await response.text());
         }
       } catch (error) {
-        console.error('Error fetching users:', error);
+        console.error("Error fetching users:", error);
       }
     };
 
