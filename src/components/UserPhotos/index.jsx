@@ -15,7 +15,7 @@ function UserPhotos() {
     const fetchPhotos = async () => {
       try {
         const response = await fetch(
-          `https://sy8yfg-8081.csb.app/api/photo/photosOfUser/${userId}`
+          `https://dh8wgs-8081.csb.app/api/photo/photosOfUser/${userId}`
         );
         if (response.ok) {
           const data = await response.json();
