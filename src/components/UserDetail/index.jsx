@@ -11,7 +11,7 @@ function UserDetail() {
     const fetchUser = async () => {
       try {
         const response = await fetch(
-          `https://7drz6q-8081.csb.app/api/user/${userId}`
+          `https://sy8yfg-8081.csb.app/api/user/${userId}`
         );
         if (response.ok) {
           const data = await response.json();

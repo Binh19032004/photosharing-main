@@ -10,7 +10,7 @@ const UserList = () => {
     const fetchUsers = async () => {
       try {
         const response = await fetch(
-          "https://7drz6q-8081.csb.app/api/user/list"
+          "https://sy8yfg-8081.csb.app/api/user/list"
         );
         if (response.ok) {
           const data = await response.json();
